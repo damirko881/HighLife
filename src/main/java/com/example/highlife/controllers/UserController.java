@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
-@RequestMapping("/teacher")
-@PreAuthorize("hasAuthority('TEACHER')")
+@RequestMapping("/user")
+@PreAuthorize("hasAuthority('USER')")
 public class UserController {
     @GetMapping
     public String teacherDashboard(Model model) {
