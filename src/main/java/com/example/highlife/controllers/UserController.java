@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @PreAuthorize("hasAuthority('USER')")
 public class UserController {
     @GetMapping
-    public String teacherDashboard(Model model) {
+    public String userDashboard(Model model) {
         return "user/dashboard";
     }
 }
