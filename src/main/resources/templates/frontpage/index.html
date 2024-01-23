@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"   xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Navbar sa Bootstrapom</title>
+    <link th:href="@{Static/css/style.css}" rel="stylesheet" />
+
+
+ 
+</head>
+<body>
+
+
+
+<!-- Navigacioni meni -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+    <a class="navbar-brand" href="#">
+        <img src="Static/images/logo.PNG" alt="Logo" height="70">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-5">
+            <li class="nav-item">
+                <a class="nav-link" href="#početna">Početna</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#događaji">Događaji</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#kontakt">Kontakt</a>
+            </li>
+        </ul>
+    </div>
+    <div class="ml-auto d-flex align-items-center">
+
+        <div >
+
+            <a class=" tekst nav-link " href="auth/login"> Prijavi se</a>
+            <a class="tekst nav-link" href="auth/register">Registracija</a>
+
+        </div>
+        <img src="Static/images/Rectangle 14.png" alt="Slika" height="70" class="mr-2">
+    </div>
+</nav>
+
+<!-- Prva Sekcija Sekcija -->
+<section id="početna" class="image-section">
+
+    <div class="overlay">
+        <h2 class="text-center mt-5">HighLife: Gdje svaka noć postaje priča za pamćenje!
+        </h2>
+    </div>
+    <div class="container text-center">
+        <p class="lead text-left">
+            HighLife klub donosi ti iznimno noćno iskustvo, gdje svjetlosni spektakli,
+            energični ritmovi i vrhunska atmosfera stvaraju nezaboravne trenutke. Uživaj u
+            visokom životu pod reflektorima, gdje tvoji plesni koraci postaju dio priče koja se prepričava.
+            Dobrodošao u HighLife - tvoje mjesto gdje svaka noć postaje nevjerojatna avantura!
+        </p>
+        <div class="text-left">
+            <a href="rezervacija.html" class="btn btn-success btn-lg">
+                Rezerviraj stol
+            </a>
+        </div>
+    </div>
+
+
+
+
+</section>
+
+<!-- Druga Sekcija -->
+
+
+<section id="događaji" class="image-container">
+    <div class="row">
+        <h2>
+            Nadolazeći <br> Događaji:
+        </h2>
+    </div>
+    <div class="row">
+        <div>
+            <img src="Static/images/Rectangle 21.png" alt="Slika 1">
+            <p class="lead" onclick="window.location.href='rezervacija';" style="cursor: pointer;">EDM Party</p>
+        </div>
+        <div>
+            <img src="Static/images/Rectangle 22.png" alt="Slika 2">
+            <p class="lead"  onclick="window.location.href='rezervacija.html';" style="cursor: pointer;">Jack Daniel's Party</p>
+        </div>
+        <div>
+            <img src="Static/images/Rectangle%2023.png" alt="Slika 3">
+            <p class="lead"  onclick="window.location.href='rezervacija.html';" style="cursor: pointer;">Mimeralna Party</p>
+        </div>
+    </div>
+</section>
+
+<!-- Treća sekcija -->
+
+
+<section id="kontakt" class="contact-section">
+    <div class="container">
+        <h2 class="display-2">Kontaktirajte nas</h2>
+        <p class="lead">Za više informacija o nadolazećim događajima i našoj ponudi kontaktirajte nas putem kontakt forme.</p>
+        <h3 class="display-4">HighLife d.o.o</h3>
+        <p class="lead">
+            88000 Mostar<br>
+            Bosna i Hercegovina<br>
+            Mobitel: +387 63 *******
+        </p>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
