@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "user")
 public class User {
 
     @Id
@@ -31,7 +32,6 @@ public class User {
     @NotBlank(message = "Molimo ponovite lozinku")
     @Transient
     String potvrdaLozinke;
-
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     Set<Role> roles = new HashSet<>();
@@ -113,4 +113,5 @@ public class User {
             return false;
         }
     }
+
 }

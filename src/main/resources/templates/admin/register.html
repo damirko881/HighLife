@@ -48,6 +48,7 @@
                 <input type="password" id="confirmPassword" name="confirmPassword" class="form-control"  th:field="*{potvrdaLozinke}" placeholder="Potvrdite lozinku">
             </div>
             <div th:if="${#fields.hasErrors('potvrdaLozinke')}" class="invalid-feedback" th:errors="*{potvrdaLozinke}"></div>
+            <input type="hidden" name="roles" value="USER" />
             <button type="submit" class="btn btn-success w-100">Registriraj se</button>
         </form>
     </section>

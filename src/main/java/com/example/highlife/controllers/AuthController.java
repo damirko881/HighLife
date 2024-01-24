@@ -2,6 +2,7 @@ package com.example.highlife.controllers;
 
 import com.example.highlife.models.User;
 import com.example.highlife.repositories.UserRepository;
+import com.example.highlife.models.Role;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -35,6 +37,7 @@ public class AuthController {
             String passwordEncoded = encoder.encode(user.getLozinka());
             user.setLozinka(passwordEncoded);
             user.setPotvrdaLozinke(passwordEncoded);
+            user.getRoles().add(Role.USER);
             userRepo.save(user);
             return "redirect:/auth/login";
         }
@@ -45,4 +48,6 @@ public class AuthController {
         model.addAttribute("user", new User());
         return "admin/login";
     }
+
+
 }
