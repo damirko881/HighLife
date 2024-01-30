@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
     @GetMapping
     public String userDashboard(Model model) {
-        return "user/dashboard";
+        return "/user/user_index";
     }
+
+
 }

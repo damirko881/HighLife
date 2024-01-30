@@ -2,9 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DASHBOARD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Rezervacija Podija</title>
+    <style>
+        .container {
+            position: relative;
+        }
+
+        .podij {
+            position: absolute;
+            cursor: pointer;
+            background-color: rgba(57, 190, 13, 0.2);
+            border: 1px solid #fff;
+        }
+        /* pading za tekst*/
+        .Tcentar{
+            padding-top: 40%;
+        }
+
+        .rezerviran {
+            background-color:#404040;
+
+            .navbar-green {
+                background-color: #28a745; /* Zelena boja */
+                color: white;
+            }
+        }
+    </style>
 </head>
 <body>
+<!--Navigacijska traka -->
+<nav class="navbar navbar-expand-lg navbar-green">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Početna</a>
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
+<!-- =Odabir datuma -->
+<div class="form-group mt-3">
+    <label for="datumRezervacije">Datum rezervacije:</label>
+    <input type="date" class="form-control" id="datumRezervacije">
+</div>
+
+
+<div class="container">
+    <h2>Rezervacija Podija</h2>
+    <img src="/Static/images/podij.PNG" alt="Podijumi Slika" class="img-fluid">
+
+    <!-- Podij A -->
+    <div class="podij" style="top: 9%; left: 1%; width: 23%; height: 65%;" onclick="rezervirajPodij('A', 15)">
+        <h3 class="text-white text-center Tcentar">  Podij A (15 stolova)</h3>
+    </div>
+
+    <!-- Podij B -->
+    <div class="podij" style="top: 13%; left: 24.5%; width: 48.5%; height: 62%;" onclick="rezervirajPodij('B', 24)">
+        <h3 class="text-white text-center Tcentar"> Podij B (24 stola)</h3>
+    </div>
+
+    <!-- VIP Loža -->
+    <div class="podij" style="top: 8%; left: 73.5%; width: 23%; height: 60%;" onclick="rezervirajPodij('VIP', 10)">
+        <h3 class="text-white text-center Tcentar"> VIP Loža (10 stolova)</h3>
+    </div>
+
+    <!-- Podij C -->
+    <div class="podij" style="top: 85%; left: 45%; width: 37%; height: 15%;" onclick="rezervirajPodij('C', 5)">
+        <h3 class="text-white text-center"> Podij C (5 stolova)</h3>
+    </div>
+</div>
+
+
+<script>
+
+    function logout() {
+
+        window.location.href = '/auth/login';
+    }
+    var korisnikovaRezervacija = null;
+
+    function rezervirajPodij(podij, maxStolova) {
+        if (korisnikovaRezervacija) {
+            alert('Već ste rezervirali podij. Možete rezervirati samo jedan podij.');
+            return;
+        }
+
+        var rezervisaniStolovi = 0;
+
+        if (rezervisaniStolovi < maxStolova) {
+            // Uzmi datum iz date pickera
+            var datumRezervacije = document.getElementById('datumRezervacije').value;
+
+            if (!datumRezervacije) {
+                alert('Datum rezervacije je obavezan.');
+                return;
+            }
+
+            var rezervacijaData = {
+                podij: podij,
+                brojStolova: rezervisaniStolovi + 1,
+                datum: datumRezervacije,
+            };
+            console.log(JSON.stringify(rezervacijaData));
+
+            fetch('reservations', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(rezervacijaData),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert(`Rezervacija za ${podij} je uspješna!`);
+                    document.querySelector('.podij:hover').classList.add('rezerviran');
+                    korisnikovaRezervacija = podij;
+                })
+                .catch(error => {
+                    console.error('Greška prilikom slanja rezervacije:', error);
+                });
+        } else {
+            alert(`Podijum ${podij} je popunjen. Odaberite drugi podij.`);
+        }
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -53,9 +53,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/auth/register/**","/auth/register")
                 .permitAll()
+                .requestMatchers("/reservations/**").permitAll()
                 .requestMatchers("/admin/**").hasAuthority("ADMIN")
                 .requestMatchers("/user/**").hasAuthority("USER")
-                //.requestMatchers("/student/**").hasAnyAuthority("STUDENT")
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -66,7 +66,7 @@ public class SecurityConfig {
                 .permitAll()
                 .and()
                 .logout()
-                //.logoutUrl("/logout")
+                //.logoutUrl("/auth/login")
                 .logoutSuccessUrl("/").permitAll();
 
         http.authenticationProvider(authenticationProvider());
