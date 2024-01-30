@@ -23,7 +23,7 @@ public class Reservation {
     @Column(name = "datum")
     private Date datum;
 
-    // Dodajte ostala polja prema potrebi
+
 
     public Reservation() {}
 

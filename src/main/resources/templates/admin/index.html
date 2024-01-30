@@ -8,6 +8,7 @@
 <div class="container mt-5">
     <h2>Lista Korisnika</h2>
     <a href="/admin/add" class="btn btn-success">Dodaj Novog Korisnika</a>
+    <a class="btn btn-success" href="#" onclick="logout()">Odjava</a>
     <table class="table">
         <thead>
         <tr style="color: white;">
@@ -37,5 +38,11 @@
         </tbody>
     </table>
 </div>
+<script>
+    function logout() {
+
+        window.location.href = '/';
+    }
+</script>
 </body>
 </html>

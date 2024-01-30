@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <title>Navbar sa Bootstrapom</title>
+    <title>Početna</title>
     <link th:href="@{Static/css/style.css}" rel="stylesheet" />
 
 
@@ -36,7 +36,7 @@
 
         <div >
 
-            <a class=" tekst nav-link " href="auth/login"> Logout</a>
+            <a class=" tekst nav-link " href="#" onclick="logout()">Odjava</a>
 
         </div>
         <img src="Static/images/Rectangle 14.png" alt="Slika" height="70" class="mr-2">
@@ -109,6 +109,15 @@
         </p>
     </div>
 </section>
+
+<script>
+
+    function logout() {
+
+        window.location.href = '/';
+    }
+
+</script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

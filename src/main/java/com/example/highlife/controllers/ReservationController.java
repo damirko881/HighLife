@@ -15,7 +15,6 @@ public class ReservationController {
 
     @PostMapping("/create")
     public ResponseEntity<String> createReservation(@RequestBody Reservation reservation) {
-        // Ovdje možete dodati dodatne provjere ili logiku prije spremanja u bazu
         reservationRepository.save(reservation);
         return ResponseEntity.ok("Rezervacija uspješno stvorena i spremljena.");
     }
