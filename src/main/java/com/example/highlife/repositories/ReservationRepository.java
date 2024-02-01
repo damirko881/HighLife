@@ -8,8 +8,8 @@ import java.util.Date;
 import java.util.List;
 
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
-    List<Reservation> findByPodijAndDatum(String podij, Date datum);
-    List<Reservation> findByDatum(Date datum);
+    List<Reservation> findByPodijAndDatum(String podij, String datum);
+    List<Reservation> findByDatum(String datum);
     List<Reservation> findByPodij(String podij);
 
     boolean existsByKorisnikAndPodij(User currentUser, String podij);

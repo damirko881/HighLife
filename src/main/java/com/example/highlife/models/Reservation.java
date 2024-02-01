@@ -21,13 +21,13 @@ public class Reservation {
 
 
     @Column(name = "datum")
-    private Date datum;
+    private String datum;
 
 
 
     public Reservation() {}
 
-    public Reservation(User korisnik, String podij, int brojStolova, Date datum) {
+    public Reservation(User korisnik, String podij, int brojStolova, String datum) {
         this.korisnik = korisnik;
         this.podij = podij;
         this.datum = datum;
@@ -57,11 +57,11 @@ public class Reservation {
         this.podij = podij;
     }
 
-    public Date getDatum() {
+    public String getDatum() {
         return datum;
     }
 
-    public void setDatum(Date datum) {
+    public void setDatum(String datum) {
         this.datum = datum;
     }
 
