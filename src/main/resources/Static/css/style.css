@@ -1,5 +1,23 @@
+/*Navigacijski meni*/
+@media (max-width: 767px) {
+    .navbar-toggler {
+        color: green; /* Boja ikonice togglera na manjim ekranima */
+    }
 
+    .navbar-toggler-icon {
+        background-color: green; /* Boja ikonice togglera na manjim ekranima */
+    }
 
+    .navbar-nav {
+        background-color: #404040; /* Boja pozadine za dropdown na manjim ekranima */
+    }
+
+    .navbar-nav .nav-link {
+        color: white; /* Boja teksta u nav-linku na manjim ekranima */
+    }
+}
+
+/* Stilovi koje ste već imali */
 .navbar-dark .navbar-nav .nav-link {
     color: green; /* Boja teksta u nav-linku */
 }
@@ -9,24 +27,43 @@
 }
 
 .navbar {
+    height: 100px; /* Postavite visinu na fiksnu vrijednost */
     max-height: 100px; /* Maksimalna visina navigacijske trake */
 }
 
-.tekst{
+.tekst {
     padding-right: 20px;
     color: white;
 }
-.nav-link{
-    color: green;
-    font-size: 27px;
 
+.nav-link {
+    color: green;
+    font-size: 25px;
 }
+
+.navbar-brand img,
+.ml-auto img {
+    height: 70px; /* Postavite visinu slika na visinu navigacijske trake */
+    margin-top: 0; /* Postavite margin-top na 0 kako bi slike bile bliže vrhu navigacijske trake */
+}
+
+.ml-auto div {
+
+    align-items: center;
+}
+
+.ml-auto .tekst {
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+
 /* Prva sekcija */
 .image-section{
     background-image: url('../images/Izrezak.PNG');
     background-size: cover;
     background-position: center;
-    height: 750px;
+    height: 850px;
     color: white;
     text-align: center;
 }
@@ -44,29 +81,31 @@
 
 
 
-/* Druga sekcija*/
+/* Druga sekcija */
 .image-container {
-    max-height: 700px;
-    display: flex;
-    justify-content: space-around;
-    background-color: #404040;
-    padding: 280px 0 0 0;
-    padding-bottom: 120px;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.row{
-    display: flex;
-}
 
-.image-container h2	{
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #404040;
+    text-align: center;
+    padding: 100px 20px; /* Prilagodite padding prema potrebi */
     font-family: 'Open Sans', sans-serif;
     color: white;
-    text-align: left;
-    font-size: 40px;
-    margin-left: 100px;
-    margin-bottom: 100px;
+}
 
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-container h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 .image-container img {
@@ -81,21 +120,23 @@
     font-family: 'Orbiton', sans-serif;
     color: green;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.image-container p:nth-child(2) {
-    font-family: 'Open Sans', sans-serif;
-}
-/*Treća sekcija */
+/* Treća sekcija */
 .contact-section {
     height: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
     background-color: #404040;
     text-align: center;
-    padding: 100px 0; /* Prilagodite padding prema potrebi */
+    padding: 50px 20px; /* Dodao px za mjernu jedinicu */
     font-family: 'Open Sans', sans-serif;
     color: white;
 }
 
-.lead{
+.lead {
     font-size: 25px;
+    margin-bottom: 30px;
 }

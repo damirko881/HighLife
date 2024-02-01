@@ -10,14 +10,11 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    //   @Autowired
-    //   private ProduktRepository produktRepository;
+
 
     @GetMapping("/")
     public String home(Model model){
-        //  List<Produkt> proizvodi = produktRepository.findAll();
 
-        //  model.addAttribute("proizvodi", proizvodi);
         return "/frontpage/index.html";
     }
 }

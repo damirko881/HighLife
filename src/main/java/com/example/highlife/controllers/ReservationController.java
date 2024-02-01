@@ -25,6 +25,6 @@ public class ReservationController {
     @PostMapping("/reservations/create")
     public String createReservation(@Valid Reservation reservation) {
         reservationRepository.save(reservation);
-        return "redirect:/user/dashboard";
+        return "redirect:/user/success";
     }
 }

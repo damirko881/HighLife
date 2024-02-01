@@ -30,5 +30,9 @@ public class UserController {
         model.addAttribute(reservation);
         return "user/dashboard";
     }
+    @GetMapping("/success")
+    public String success(Model model){
+        return "user/success";
+    }
 
 }

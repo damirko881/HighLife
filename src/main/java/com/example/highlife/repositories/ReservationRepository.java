@@ -15,5 +15,5 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
     boolean existsByKorisnikAndPodij(User currentUser, String podij);
 
     boolean existsByKorisnik(User currentUser);
-    // Dodajte druge potrebne metode prema vašim zahtjevima
+
 }
